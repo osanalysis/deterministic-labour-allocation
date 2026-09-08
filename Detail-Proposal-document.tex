@@ -1,5 +1,7 @@
 \documentclass[a4paper, 12pt]{article} 
-\usepackage[margin=1in]{geometry}       
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
 
 \title{Merit Based Non-AI Matching Systems for Job Market \\[10pt] \large 
 Bypassing probabilistic AI failures via non assymeteric exponential 
@@ -12,18 +14,176 @@ decay \& graph theoretic taxonomy reversal \textit{(working sub-title)}}
 
 \section{Introduction} % This adds a heading
 
-The AI based systems are not deterministic but probabilistic in nature. If we take an example of an AI based CV filtering system 
+The AI based systems are probabilistic in nature. If we take an example of an AI based CV filtering system 
 for job matching, the same CV could be accepted or rejected based on a certain black box model that performs the matching and ranking.
 For the same CV, the scores assigned to a certain CV could change either by repeating the same input (same CV for the same job) or when the 
 system is updated with a new data or model. If the \textit{"truth"} that decision-making is based upon is alterable in this way, the system 
-cannot be held accountable for its decisions. If it comes to auditing the system, the audit will also have to be probabilistic in nature, which violates
-the principle of accountability. This situation is further complicated by the system being in use by people who are not the field experts, especially the HR.
-The HR are not experts in the Machine Learning and AI. To add salt to the wound, they are mostly also not experts in the field of the job that they are hiring 
-for which makes it twice as worse because they are checking the pre-filtered CVs now with God knows what criteria. This presents a problem of sub merit hirings 
-which the system may eventually get plagued with and the right talent remaining unemployed. The far reaching eventual consequences of this could be left to the 
-social scientists to research and analyse.  
-Given the GDPR act 
-I seek to remedy the situation by proposing a rather deterministic system
+cannot be held accountable for its decisions. If it comes to auditing the system, the audit will also have to be probabilistic in nature, which violates the principle of accountability. This situation is further complicated by the system being in use by people who are not the field experts, especially the HR. The HR are not experts in the Machine Learning and AI. To add salt to the wound, they are mostly also not experts in the field of the job that they are hiring for which makes it twice as worse because they are checking the pre-filtered CVs now with God knows what criteria. This presents a problem of below merit hirings which may eventually plague the system by creating a situation where the right talent remains unemployed. The far reaching eventual consequences of this could be left to the social scientists to research and analyse. 
 
-This means that the same input can yield different outputs at different times. This is a problem for job matching systems where the same candidate may be matched to different jobs at different times, leading to confusion and fru
+With the introduction of the EU AI Act and the pre existing GDPR act, the AI based systems will go under scrutiy which has the potential to affect the businesses of the companies which have their business model based on the AI driven ATS systems. The transparency cannot be ensured unless it violates the principle of accountability in their case. Therefore, there is a need for something else. Something not probabilistic in nature but rather deterministic. 
+
+I seek to remedy the situation by proposing a rather deterministic system. 
+
+A deterministic system is deterministic in nature. In simple terms, same input will always yeild the same output given the system has not been internally modified. This is different in nature to the probabilistic systems. A deterministic system is also explainable in the algorithmic sense. The system can be audited because the algorithm has gone through a certain number of pre determined steps. That takes care of the accountability part. When such a system is used to carry out the matching of the applicants to the job description, it makes it transparent for both parties to see and address the reservations which may arise. 
+
+The next step is to change the very nature of hiring by re-arranging the hiring process in terms of its filter. That is to remove the HR/recruiters from the first stage and put them at the end of the process where salary negotiation should take place. The assumption here is that a company needs the right person for the job based on merit rather than superficial filters like the salary demand etc which are mopre negotiable than the skillset and education that a person has to offer. \\In the next sections, I will describe the steps in terms of a single operational workflow.
+
+\section{Step by Step Process}
+
+I would like to address an important issue before starting. The issue is the current input that is provided from the side of the applicant. A judgement decision has to be bounded by the quality of the input provided by the applicant if we assume that the recruiter is not omniscient -  lucky for us, that is also the case. In addition to that, in order to take away the \textit{"intelligence"} claim of the AI systems, the deterministic system cannot and should not make mistakes in the solutions that it is claiming to be better at. We, therefore, must proceed with the \textit{"deigning for error"} philosophy of the great Don Norman. We assume the applicant to be someone who is not very skilled at presenting himself by making a top class Resumé. We can also take the approach of the current systems by relying on the CV parsers for the purpose of information extraction. As the CV parsers are also using AI, that will be against the point that I am trying to make here. After some deliberation, I have concluded that we have to take the CV out of the equation completely and rely on standardised applicant profiling. The following method of profile building is the foundationally important step of our process. We have to keep a couple of other things in mind that should address the derivative problems of the AI based ATS systems such as bias etc. The scientific evidence indicates that it came from the human data which it was trained upon. Since we have to keep the human recruiter in the loop while aiming for a near perfect explainable, auditable system; we have to make sure that our recruiter is blind to any inherent biases which showed up in the biological system because of the reasons like culture, religion, bad-parenting, general ignorance or stupidity, or just being inherently evil. We therefore will not consider any demographic features like name, gender, age, country of origin, sexual preference, current residence, visa status etc. The system has to make a pure merit based match. Therefore the system considers the information which is required for it. I will even push for the later interviews to be off camera in order for no one to get \textit{good looks} advantage.
+
+\subsection{Applicant Structural Input\textit{(Supply Structuring)}}
+
+Job seeker builds an objecive, data pure dossier. The sytem interface replaces traditional text-heavy CV with ridig, structural data blocks.
+
+
+\subsubsection{Anonymity Shield}
+
+The system strips away personal indetifiers like name, gender, age, geographical address. The system locks away that infor in an encrypted, non-readable, sub table to prevent human discrimination.
+
+\subsubsection{The academic degree registration}
+
+The applicant inputs their university credentials. Isntead of raw text, the system maps their major directly to the official, human curated UNESCO-ISCED-F Code. (i.e. M.Sc. Maths maps to 0541\_msc\_math). The applicant is to provide an evidence later on of the university education if claimed.
+
+\subsubsection{The competency registration}
+
+The applicant enters their historical tools \& skills. The platform maps these directly to unique static ESDO Node ID (e.g. aws\_redshift)
+
+\subsubsection{The active choronological tracker}
+
+The applicant utilizes an interface to input the exact date they last actively deployed each tech node or graduated from their degree. This defines the exact time variable (t) to calculate skill depreciation.
+
+\subsubsection{The isolated compensation vault}
+
+The candidate logs in their target salary or wished salary. This value is locked in a serate valut completely isolated from the ranking and matching equations. (i.e. 0 \% weight.)
+
+\subsection{The employer vacancy blue print \textit{(Demand Structuring)}}
+
+The team leader from the relevant department (by-passing non specialist HR filters), logs into the system to post an open vacancy. The platform strictly guides them to describe the exact technical data requirements. It will advised to the team leader in question to avoid using the corporate flowerly language but to describe the process rather specifically.
+
+\subsubsection{Target tool definition}
+
+The manager or the team lead specifies the precise software tool currently in active use or production (e.g. sap\_hana). That will be in accordance to the node ID's as mentioned in the ESDO.
+
+\subsubsection{Target Academic requirements}
+
+They select the primary uni major desired for the role using the UNESCO standard e.g. 0542\_msc\_statistics. It has been observed in the job postings that multiple degrees of potentially divergent educational paths are mentioned in the job description. In such a case, relevant course based skills are to be mentioned. This is the second most important data input of equal importance. What an employer receives is bounded by the requirements that they provide.
+
+\subsubsection{Operational scale metrics}
+
+They define the required execution scale (e.g. 50+ TB of managed data)
+
+\subsubsection{0\% weight mandate}
+
+Irrelevant variables like current location, uni brand name prestige, or initial salary bids are blocked from taking any weight away from the technical engine.
+
+\subsection{Behind the scenes multi-taxonomy traversal \& mathematical decay}
+
+Before running the macro matching loops, the core processes every registered appluication against the vacancy using pure, deterministic CS \& Math.
+
+\subsubsection{Calculation of Structural closeness via Leacock-Chodorow similarity formula (LCH)}
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{Tool Similarity Matrix ($Sim_{tool}$)}
+    
+    Calculates the path length b/w the candidate's tool and the job tool, e.g., the path from Redshift to HANA through a shared parent node olap\_warehouses in exactly in two steps.
+        \begin{equation}
+            Sim_{tool} = -\ln  \biggl( \frac{path\_length_{tool}}{2 \cdot max\_depth_{tool}} \biggr)
+        \end{equation}
+
+    \item \textbf{Academic Major Affinity Matrix ($Sim_{degree}$)}
+    
+    Calculates the path b/w the candidate's degree \& the required degree, e.g., path from M.Sc. mathematics to M.Sc. statistics through UNESCO parent note \\ 054\_mathematics and Statistics in exactly two steps.
+        \begin{equation}
+            Sim_{degree} = -\ln  \biggl( \frac{path\_length_{degree}}{2 \cdot max\_depth_{degree}} \biggr)
+        \end{equation}
+
+\end{enumerate}
+
+\subsubsection{Calculation of Active merit capital via exponential decay}
+
+The system initializes the candidate's experience bank account. It takes the foundational experience credit injected by their degree and adds it to their raw physical tool years, applying \textit{assymeteric exponential depreciation} based on how long they have been out of the active loop. The following equation summarizes the merit capital K at a given instant of time t:
+        \begin{equation}
+            K_{total}(t) = \bigl(K_{th}(0) . e^{-\lambda_{th}.t}   \bigr) + \bigl(K_{pr}(0) . e^{-\lambda_{pr}.t}   \bigr)
+        \end{equation}
+\\ Where, \\
+    $K_{th}$ is theoretical capital \\
+    $K_{pr}$ is procedural/practical capital
+
+\begin{itemize}
+\item \textbf{Uni Injection $K_{th}(0)$)}
+
+The degree injects a massive baseline experience asset (B.Sc. = 3 years, M.Sc. = 5 years, PhD = 8 years). \newpage
+
+\item \textbf{The permanenet framework resiliency $\lambda_{th} = 0.02$ (for example)}
+
+Because uni logic is near permanenet, its decay rate is near zero. An MS graduate retains their structural value for decades.
+
+\item \textbf{The fast tool volatility $\lambda_{pr} = 0.35$ (for example)}
+
+Because commercial software tool interfaces change constantly, a bootcamp graduate or tool only specialist who doesnt use a tool wull see their procedural capital cut in half roughly every 2 years.
+
+\end{itemize}
+
+\subsection{Compute the compostie pure merit score (M) and Onboarding Index (OI)}
+
+The engine multiplies the pieces together to find the final auditable sorting score.
+        \begin{equation}
+            M = Sim_{tool} \times Sim_{degree} \times K_{total}(t)
+        \end{equation}
+
+\begin{itemize}
+\item \textbf{The Onboarding Index (OI)}
+
+Physical timeline estimate on how long the candidate needs to adapt to the new tools.
+    \begin{enumerate}[label=(\roman*)]
+        \item \textbf{Path length = 1}
+        
+        Direct match - OI index = 0  (as days to onboard).
+        
+        \item \textbf{Path length = 3}
+        
+        Acrchitectural overlap match - OI index = 5
+    \end{enumerate}
+Abstract expert to learn tool specific dashboard system (eg).\\
+The system creates two symmetric preference order list based on values of matrix M.
+\end{itemize}
+\newpage
+\subsection{The Skill First Gale Shapely Stable Marriage Loop}
+
+The platform inputs the pure merit preference lists into the allocation engine and executes the worker optimal Gale-Shapely loop. This ensures that the matching process cannot be hijacked or corrupted by human gatekeepers.
+
+\begin{figure}[htbp]
+    \centering % Centers the picture horizontally
+    \includegraphics[width=0.8\linewidth]{gale-shapely.png} % Replace with your filename
+    \caption{Rough Sketch of End-To-End pipeline of the match making process}
+    \label{fig:Gale_Shapely_Loop}
+\end{figure}
+
+\newpage
+
+\section{Match Delivery and Symmetrical Human Verification}
+
+The algo. outputs the absolute best match available in the labour market based entirely on the documented intellectual capabilities. The architectural foundations and the mathematics behind it is supposed to keep it solid and robust in results.
+
+In order to mitigate the rest of the AI system based uncertainity, the human factor has now to be readded into the recruitment funnel. The process is described as follows:
+
+\subsection{The complete merit dossier}
+
+The technical hiring team receives a clean, streamlined dashboard. It displays the candidates exact LCH score, their UNESCO degree affinity tracking, their remaining undecayed active knowledge capital, and their OI. Example, Candidate holds M.Sc. in mathematics, shares immediate academic node with M.Sc. statistics at 88\% affinity. Tool onboarding lag is estimated to be 5 days from Redshift to HANA.
+
+\subsection{The negotiation gauge layer}
+
+At the cery bottom of the document, the system pu;;s the candidates hidden salary \& aligns it next to the company's internal budget range. For example, 85k euros per annum as demanded by the applicant lies within the company's offerred range of 80k to 95k Euros per annum. Since the match was generated on pure merit, the salary does not act as a filter barrier but rather strictly as a data point to guide the final human conversation.
+
+\subsection{Human stage of technical verification}
+
+The candidate goes straight to the peer-to-peer technical interview with for example, the engineering team to double check their structural problem solving method.
+
+\subsection{The final human stage aka the HR close}
+
+Once the technical team confirms the match, the profile moves to HR fro the final admin round. Because the candidate is the mathematically proven best match for the role, HR utilizes the negotiation gauge data to finalize contract logistics \& sign the contract or the employment agreement.
+
+
+
+
 \end{document}
