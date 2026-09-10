@@ -1,0 +1,137 @@
+\documentclass[a4paper, 12pt]{article} 
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% Optional: Customize the link colors (otherwise they have bright red/green boxes)
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+}
+
+
+\title{Compliance Requirements From "High Risk Systems" As Per the EU AI Act\\[10pt] \large 
+Summary Report For AI Recruitment Systems}
+\author{Waleed Ahmed}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction} 
+
+The \href{https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai}{Regulation (EU) 2024/1689}, or more commonly known as the EU AI Act 2024 is a legal frame for the Artificial Intelligence (AI). It regulates the AI based on its potential to do harm and not the technology itself. It is unlike the GDPR framework as it applies globally to all the companies if the AI based outputs are utilised or deployed within the EU.
+
+It is a 4 Tier framework where there are 4 risk based classes:
+
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{High-Risk (Prohibited)}
+    
+    Systems which can pose a threat to safety, livelihood, or rights are banned entirely.
+    Such as untargeted scraping of facial images, social scoring systems, emotional regulation in workplace / interviews.
+
+    \item \textbf{High-Risk (Strictly Regulated)}
+    
+    Systems which significantly affect the life trajectory of an individual.
+    HR, recruitment, ATS software which are used to filter and rank candidates.
+
+    \item \textbf{Limited-Risk (Transparency Obligations)}
+    
+    Systems like conversational chatbots.
+    Customer service chatbots etc. Primary mandate is clear user disclosure; Humans must be informed that they are interacting with an AI.
+
+    \item \textbf{Minimal-Risk (Unregulated)}
+    
+    Most AI applications currently in use.
+    Video games AI, spam filters, inventory prediction algorithms etc.
+
+
+\end{enumerate}
+
+\newpage
+
+\section{Compliance of High Risk Systems - Recruitment Systems}
+
+According to \href{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689}{Chapter III (Articles 9-15)} discuss the following required capabilities that are needed to be implemented in order for a high-risk system to be compliant.
+
+\subsection{(Article 9) Continuous Risk Management}
+
+A documented and structured process that identifies, estimates, and mitigates the known risks (such as algorithmic bias or technical errors) throughout the operational lifecycle.
+
+\subsection{(Article 10) Data Governance \& Bias Mitigation}
+
+The training, validation, and testing datasets must meet high-quality standards. The datasets must be thoroughly reviewed for historical biases (e.g., gender or racial discrimination in historical hiring data) and corrected before deployment.
+
+\subsection{(Article 11) Exhaustive Technical Documentation}
+
+The provider must create and maintain up-to-date technical blueprints showing exactly how the model works, how it was trained, and its structural architecture so regulators can audit it.
+
+\subsection{(Article 12) Automated Logging}
+
+The system must automatically generate and store immutable logs of its operations. For recruitment, it must log every single input, output, and decision point (e.g., why a specific candidate was automatically rejected or ranked low).
+
+\subsection{(Article 13) Transparency \& Disclosures}
+
+The system must be clear and understandable to the corporate users (HR managers). It must procide a manual or explicit guide outlining its intended purpose, limits, and how it calculates scores.
+
+\subsection{(Article 14) Human Oversight}
+
+The software must be designed so that humans can fully understand its outputs, override decisions, or disregard the AI's recommendations completely.
+
+\subsection{(Article 15) Robustness and Cyber-security}
+
+The system must maintain appropriate levels of accuracy and be resilient against "adversarial attacks" (e.g., candidates trying to game the AI with hidden keywords).
+
+\subsection{(Article 17, 48) Quality Management System \& CE Marking}
+
+The company must implement a product-focused compliance governance workflow, complete a formal Conformity Assessment, and affix a CE Mark to the software.
+
+\newpage
+\section{Determination of Compliance Costs}
+
+Compliance costs are determined by a mix of upfront development friction and long-term operation overhead. For a software provider, these costs typically scale based on three major factors:
+
+\subsection{Architecture and System Complexity \textit{(The Tech Stack)}}
+
+\subsubsection{Black Box Models \textit{(Most Expensive)}}
+
+Deep neural networks or fine-tuned Large Language Models (LLMs) have massive data lineage webs. Documenting every node weight and proving why a model inferred a specific match requires expensive third-party automated auditing platforms, data engineers, and endless drift-retraining cycles.
+
+\subsubsection{Hybrid or Highly Explainable Models \textit{(Medium Cost)}}
+
+Built from the ground up to map transparent semantic logic, these systems have lower testing and documentation overhead because their logic paths are traceable by design.
+
+\subsubsection{Purely Deterministic Systems \textit{(Near-Zero Cost)}}
+
+If a system matches entirely on user-defined parameters, logic filters, and explicit test metrics, it escapes the "High-Risk AI" definition completely, eliminating these compliance costs entirely.
+
+\subsection{The Legal and Procedural Chain}
+
+\subsubsection{Conformity Assessments}
+
+For standalone recruitment systems under Annex III, providers can usually perform a self-assessment rather than paying a third-party "Notified Body" audit. However, compiling the necessary Annex IV documentation requires hundreds of billable internal engineering and legal hours.
+
+\subsubsection{Fundamental Rights Impact Assessments (FRIAs)}
+
+For corporate deployers using the tech, additional legal assessments must be carried out to prove the software doesn't infringe on labour rights.
+
+\subsection{The Risk of Non-Compliance \textit{(The Alternative Cost)}}
+
+The true metric driving compliance budgets is the penalty tier. If an ATS or recruitment platform is found operating non-compliantly after the high-risk enforcement deadlines kick in, the fines are catastrophic:
+
+\begin{itemize}
+    \item
+    Up to \textbf{€15 million or 3\% of global annual turnover} (whichever is higher) for violating high-risk technical obligations.
+
+    \item 
+    Up to \textbf{€35 million or 7\% of global turnover} if the system crosses into prohibited practices.
+
+\end{itemize}
+
+\newpage
+
+
+
+\end{document}
